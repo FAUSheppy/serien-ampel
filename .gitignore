@@ -1,0 +1,8 @@
+*.swp
+*.txt
+*.out
+*.log
+*.pyc
+data/
+build/
+__pychache__/
