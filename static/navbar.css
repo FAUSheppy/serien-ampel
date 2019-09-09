@@ -7,7 +7,7 @@
     padding-left: 5%;
     padding-right: 5%;
     background-color: grey;
-    bottom: 0;
+    top: 0;
     left: 0;
     height: 35px;
 }
@@ -17,5 +17,5 @@
 }
 
 .navbar-right{
-    float: left;
+    float: right;
 }

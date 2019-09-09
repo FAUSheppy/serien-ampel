@@ -9,7 +9,7 @@ def rootPage():
     footer = flask.Markup(flask.render_template("partials/footer.html"))
     header = flask.Markup(flask.render_template("partials/header.html"))
     navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("home.html", header=header, footer=footer)
+    return flask.render_template("home.html", header=header, footer=footer, navbar=navbar)
 
 @app.route("/suggest-results")
 def suggestResults():
@@ -17,7 +17,7 @@ def suggestResults():
     footer = flask.Markup(flask.render_template("partials/footer.html"))
     header = flask.Markup(flask.render_template("partials/header.html"))
     navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("suggest-results.html", header=header, footer=footer)
+    return flask.render_template("suggest-results.html", header=header, footer=footer, navbar=navbar)
 
 @app.route("/search-results")
 def searchResults():
@@ -25,7 +25,7 @@ def searchResults():
     footer = flask.Markup(flask.render_template("partials/footer.html"))
     header = flask.Markup(flask.render_template("partials/header.html"))
     navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("search-results.html", header=header, footer=footer)
+    return flask.render_template("search-results.html", header=header, footer=footeri, navbar=navbar)
 
 ##### STATIC FILES #####
 @app.route('/static/<path:path>')
