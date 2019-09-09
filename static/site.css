@@ -1,0 +1,285 @@
+/* general */
+body{
+    background: #323232;
+}
+
+button{
+    background-color: red;
+    border-color: red;
+    color: #583535;
+    font-size: 50;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+hr{
+    margin-top: 20px;
+    border-color: black;
+    color: black;
+}
+
+span{
+    margin-top: 5px;
+    width: 100%;
+    display: inline-block;
+    font-size: 50px;
+    text-align: left;
+}
+
+.text-wrapper{
+    word-wrap: break-word;
+}
+
+.link-container{
+    margin-top: 40px;
+}
+
+.poll-name-small{
+    text-align: left;
+    font-size: 15;
+}
+
+.main-container{
+    background: orange;
+
+    max-width: 700px;
+    min-width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    padding: 40px;
+
+    display: block;
+    text-align: center;
+
+    border-radius: 25px;
+
+    font-size: 25;
+    font-weight: bold;
+    color: #68553d;
+}
+
+input[type="checkbox"]{
+	width: 80px;
+	height: 80px;
+
+	background: grey;
+	border-radius: 10px;	
+	
+	cursor: pointer;
+    float: right;
+}
+
+.tokenInput{
+    font-size: 50px;
+    max-width: 70%;
+}
+
+
+.button-container {
+    margin-top: 40px;
+}
+
+.options-container{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 100%;
+    overflow-y: overlay;
+}
+
+.small{
+    max-width: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.stretched{
+    max-width: unset !important;
+}
+
+/* post-vote */
+.link-field{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* result page */
+.results-container{
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.single-result-name{
+    float: left;
+    width: 30%;
+    word-wrap: break-word;
+}
+
+.single-result-ratio{
+    float: left;
+    margin-left: 20px;
+    width: 50%;
+}
+
+.percentage-bar{
+    background: rgba(255,25,0,0.5);
+    padding-left: 10px;
+    height: auto;
+}
+
+.single-result-abs{
+    float: right;
+    width: 10%;
+}
+
+/* ######################## FOOTER ####################### */ 
+.footer{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    position: fixed;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: grey;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+}
+
+.footerLink{
+    margin-top: 0;
+    padding-top: 0;
+    text-decoration: none;
+    color: black;
+}
+.mid-footer{
+}
+.left-footer{
+    float: left;
+}
+.right-footer{
+    float: right;
+}
+.question-title{
+    word-wrap: break-word;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.vote-token-field{
+    font-size: 40px;
+}
+
+@media(max-width: 1200px){
+    .footer{
+        height: unset;
+    }
+
+    .footerLink{
+        font-size: 4vw;
+    }
+    
+    .mid{
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    .main-container{
+        margin-top: 1%;
+        margin-bottom: 1%;
+    
+        padding: 2vw;
+        border-radius: 3vw;
+
+        min-width: 250px;
+    }
+    .main-title{
+        font-size: 6vw;
+    }
+    
+    .question-title{
+        font-size: 10vw;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+    .tokenInput{
+        width: 60%;
+        font-size: 15vw;
+    }
+
+    .token-container{
+        font-size: 10vw;
+    }
+    
+    .go-button{
+        height: 15vw;
+        width: 30%;
+        float: right;
+        margin-top: 1.5vw;
+        font-size: 8vw;
+    }
+
+    .link-field{
+        font-size: 6vw;   
+    }
+    .link-container{
+        margin-top: unset;
+        font-size: 8vw;
+        text-align: left;
+    }
+    .adm-token-container{
+        margin-top: 3vw;
+        font-size: 6vw;
+    }
+
+    .small{
+        margin-left: 1vw;
+        margin-right: 1vw;
+        font-size: 7vw;
+    }
+    button{
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+    .text-wrapper{
+        max-width: 70%;    
+    }
+    .vote-token-field{
+        font-size: 6vw;
+        max-width: 60%;
+    }
+    .single-result-name{
+        float: left;
+        width: 30%;
+        font-size: 5vw;
+        word-wrap: break-word;
+    }
+    .single-result-ratio{
+        float: left;
+        margin-left: 20px;
+        width: 50%;
+        margin-bottom: 2vw;
+    }
+}
+
+@media(max-width: 600px){
+    .footer{
+        height: unset;
+    }
+
+    .footerLink{
+        font-size: 4vw;
+    }
+    
+    .mid{
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+}

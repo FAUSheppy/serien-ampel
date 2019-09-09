@@ -1,0 +1,21 @@
+.navbar{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    position: fixed;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: grey;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+}
+
+.navbar-left{
+    float: left;
+}
+
+.navbar-right{
+    float: left;
+}
