@@ -6,10 +6,17 @@ app = flask.Flask("serien-ampel")
 ##### FRONTEND PATHS ########
 @app.route('/')
 def rootPage():
-    footer = flask.Markup(flask.render_template("partials/footer.html"))
-    header = flask.Markup(flask.render_template("partials/header.html"))
-    navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("home.html", header=header, footer=footer, navbar=navbar)
+    footer  = flask.Markup(flask.render_template("partials/footer.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html"))
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html"))
+
+    options = ["Action", "SiFi", "Anime", "Crime"]
+    filters = []
+    for opt in options:
+        filters += [flask.Markup(flask.render_template("partials/suggest-filter-option.html", \
+                                    optionName=opt))]
+    return flask.render_template("home.html", header=header, footer=footer, navbar=navbar, \
+                                    prerenderedFilters=filters)
 
 @app.route("/suggest-results")
 def suggestResults():

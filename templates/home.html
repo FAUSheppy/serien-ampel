@@ -17,11 +17,14 @@
 
         <div class=suggest>
             <button class=go-button>Suggest something!</button>
-            <input type=checkbox class=suggest-filter></input><span>Option 1</span>
+            {% for prerenderFilter in prerenderedFilters %}
+                {{ prerenderFilter }}
+            {% endfor %}
         </div>
 
     </div>
 
+    <!-- footer -->
     {{ footer }}
 
 </body>
