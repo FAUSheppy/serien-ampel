@@ -7,5 +7,4 @@ def simpleSearchFilter(series, string):
 
     inputString = string.lower()
     titleString = series.title.lower()
-    print(titleString, inputString)
     return string in series.title or series.title in string

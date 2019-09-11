@@ -24,5 +24,4 @@ def suggest(tags, user=None):
 def search(inputString):
     if not seriesList:
         raise AssertionError("No database availiable (search)")
-    print(inputString)
     return filter(lambda e: simpleSelection.simpleSearchFilter(e, inputString), seriesList)
