@@ -12,11 +12,11 @@
         
         <div class=search>
             <input class=search-field></input>
-            <button class=go-button>Search!</button>
+            <button class=go-button onclick=searchButton()>Search!</button>
         </div>
 
         <div class=suggest>
-            <button class=go-button>Suggest something!</button>
+            <button class=go-button onclick=suggestButton()>Suggest something!</button>
             {% for prerenderFilter in prerenderedFilters %}
                 {{ prerenderFilter }}
             {% endfor %}
