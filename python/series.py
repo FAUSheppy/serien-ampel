@@ -1,3 +1,5 @@
+import flask
+
 class Series:
     def __init__(self, genre, score, season, title, complete):
         self.genre    = genre
@@ -5,6 +7,12 @@ class Series:
         self.season   = season
         self.title    = title
         self.complete = complete
+
+    def getLineHTML(self, rank):
+        string = flask.render_template("partials/seriesResultEntry.html", rank=rank, \
+                                                                 seriesTitle=self.title, \
+                                                                 seriesScore=self.score)
+        return flask.Markup(string)
 
     def __gt__(self, other):
         return self.score > other.score

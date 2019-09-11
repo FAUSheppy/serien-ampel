@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ header }}
+    </head>
+    <body>
+        {{ navbar }}
+        <div class=results-container role="main">
+            <div class=colum-names>{{ columNames }}</div>
+            {% for series in seriesList %}
+                {% set count = loop.index %}
+                {% if count % 2 == 0 %}
+                <div class="line-even">
+                    {{ series.getLineHTML(count) }}
+                </div>
+                {% else %}
+                <div class="line-odd">
+                    {{ series.getLineHTML(count) }}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class=footer role="contentinfo">
+            {{ footer }}
+        </div> 
+    </body>
+</html>
