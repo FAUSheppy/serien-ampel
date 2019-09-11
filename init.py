@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import flask
+import python.backend as backend
 
 app = flask.Flask("serien-ampel")
 
@@ -21,18 +22,20 @@ def rootPage():
 @app.route("/suggest-results")
 def suggestResults():
     '''This path displays results for a suggest with parameters'''
-    footer = flask.Markup(flask.render_template("partials/footer.html"))
-    header = flask.Markup(flask.render_template("partials/header.html"))
-    navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("suggest-results.html", header=header, footer=footer, navbar=navbar)
+    #footer = flask.Markup(flask.render_template("partials/footer.html"))
+    #header = flask.Markup(flask.render_template("partials/header.html"))
+    #navbar = flask.Markup(flask.render_template("partials/navbar.html"))
+    #return flask.render_template("suggest-results.html", header=header, footer=footer, navbar=navbar)
+    return "<br>".join([ x.title for x in backend.suggest(["Anime", "SiFi"]) ])
 
 @app.route("/search-results")
 def searchResults():
     '''This path displays results for a series-search'''
-    footer = flask.Markup(flask.render_template("partials/footer.html"))
-    header = flask.Markup(flask.render_template("partials/header.html"))
-    navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    return flask.render_template("search-results.html", header=header, footer=footeri, navbar=navbar)
+    #footer = flask.Markup(flask.render_template("partials/footer.html"))
+    #header = flask.Markup(flask.render_template("partials/header.html"))
+    #navbar = flask.Markup(flask.render_template("partials/navbar.html"))
+    #return flask.render_template("search-results.html", header=header, footer=footeri, navbar=navbar)
+    return backend.search("test")
 
 ##### STATIC FILES #####
 @app.route('/static/<path:path>')
@@ -44,4 +47,5 @@ def icon():
     return app.send_static_file('defaultFavicon.ico')
 
 if __name__ == "__main__":
+    backend.loadDB()
     app.run(host='0.0.0.0')
