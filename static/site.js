@@ -15,6 +15,7 @@ function suggestButton(){
 
     if(string == ""){
         alert("Must select at least one filter")
+        return
     }
 
     window.location.href = '/suggest-results' + "?query=" + string
