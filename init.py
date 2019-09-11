@@ -3,6 +3,7 @@ import flask
 import python.backend as backend
 
 app = flask.Flask("serien-ampel")
+SEPERATOR = ","
 
 ##### FRONTEND PATHS ########
 @app.route('/')
@@ -22,20 +23,39 @@ def rootPage():
 @app.route("/suggest-results")
 def suggestResults():
     '''This path displays results for a suggest with parameters'''
-    #footer = flask.Markup(flask.render_template("partials/footer.html"))
-    #header = flask.Markup(flask.render_template("partials/header.html"))
-    #navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    #return flask.render_template("suggest-results.html", header=header, footer=footer, navbar=navbar)
-    return "<br>".join([ x.title for x in backend.suggest(["Anime", "SiFi"]) ])
+    footer  = flask.Markup(flask.render_template("partials/footer.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html"))
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html"))
+    columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
+                                                                                seriesTitle="Title", \
+                                                                                rank="#", \
+                                                                                seriesScore="Rating"))
+    tagListString = flask.request.args.get("query")
+    if not tagListString:
+        raise AssertionError()
+    if SEPERATOR in tagListString:
+        tagList = tagListString.split(SEPERATOR)
+    else:
+        tagList = [tagListString]
+
+    return flask.render_template("results.html", header=header, footer=footer, navbar=navbar,
+                                    seriesList=backend.suggest(tagList), columNames=columNames)
 
 @app.route("/search-results")
 def searchResults():
     '''This path displays results for a series-search'''
-    #footer = flask.Markup(flask.render_template("partials/footer.html"))
-    #header = flask.Markup(flask.render_template("partials/header.html"))
-    #navbar = flask.Markup(flask.render_template("partials/navbar.html"))
-    #return flask.render_template("search-results.html", header=header, footer=footeri, navbar=navbar)
-    return "<br>".join([ x.title for x in backend.search("Dark") ])
+    footer = flask.Markup(flask.render_template("partials/footer.html"))
+    header = flask.Markup(flask.render_template("partials/header.html"))
+    navbar = flask.Markup(flask.render_template("partials/navbar.html"))
+    columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
+                                                                                seriesTitle="Title", \
+                                                                                rank="#", \
+                                                                                seriesScore="Rating"))
+    inputString = flask.request.args.get("query")
+    if not inputString:
+        raise AssertionError()
+    return flask.render_template("results.html", header=header, footer=footer, navbar=navbar,
+                                    seriesList=backend.search(inputString), columNames=columNames)
 
 ##### STATIC FILES #####
 @app.route('/static/<path:path>')
