@@ -17,6 +17,12 @@ def suggest(tags, user=None):
     if user:
         raise NotImplementedError()
     if not seriesList:
-        raise AssertionError("No database availiable")
+        raise AssertionError("No database availiable (suggest)")
 
     return filter(lambda e: simpleSelection.simpleFilter(e, tags), seriesList)
+
+def search(inputString):
+    if not seriesList:
+        raise AssertionError("No database availiable (search)")
+    print(inputString)
+    return filter(lambda e: simpleSelection.simpleSearchFilter(e, inputString), seriesList)

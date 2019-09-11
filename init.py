@@ -35,7 +35,7 @@ def searchResults():
     #header = flask.Markup(flask.render_template("partials/header.html"))
     #navbar = flask.Markup(flask.render_template("partials/navbar.html"))
     #return flask.render_template("search-results.html", header=header, footer=footeri, navbar=navbar)
-    return backend.search("test")
+    return "<br>".join([ x.title for x in backend.search("Dark") ])
 
 ##### STATIC FILES #####
 @app.route('/static/<path:path>')
