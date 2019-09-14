@@ -1,0 +1,8 @@
+<div class=seriesDetailsContainer {% if rank == 1 %} style="display: block;" {% endif %}>
+    <div class=traffic-light>
+        <div class="green light"  {% if score >= 6 %}               style="opacity: 1" {% endif %}> </div>
+        <div class="yellow light" {% if score <= 6 and score >= 3%} style="opacity: 1" {% endif %}> </div>
+        <div class="red light"    {% if score <= 3 %}               style="opacity: 1" {% endif %}> </div>
+    </div>
+    <div class=reasoning> {{ reason }} </div>
+</div>

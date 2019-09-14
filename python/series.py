@@ -15,6 +15,11 @@ class Series:
                                                                  seriesScore=self.score)
         return flask.Markup(string)
 
+    def getDetailsHTML(self, rank):
+        string = flask.render_template("partials/seriesResultDetails.html", score=self.score, \
+                                            reason="Not Implemented", rank=rank)
+        return flask.Markup(string)
+
     def __gt__(self, other):
         return self.score > other.score
 

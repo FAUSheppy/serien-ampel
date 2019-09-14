@@ -41,5 +41,5 @@ def getFilters(limit=20):
     filtersSortedByFrequency = sorted(list(zip(filters.keys(), filters.values())), key=lambda x: x[1])
     return sorted([ x[0] for x in filtersSortedByFrequency][:limit])
         
-        
-
+def getReason():
+    raise NotImplementedError()
