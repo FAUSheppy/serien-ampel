@@ -14,6 +14,8 @@
 
 .navbar-left{
     float: left;
+    text-decoration: none;
+    color: black;
 }
 
 .navbar-right{
