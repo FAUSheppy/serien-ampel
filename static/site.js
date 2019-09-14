@@ -9,7 +9,7 @@ function suggestButton(){
     for(i = 0; i < filters.length; i++) {
         console.log(i)
         if(filters[i].checked){
-            string += filters[i].id
+            string += filters[i].id + ","
         }
     }
 
