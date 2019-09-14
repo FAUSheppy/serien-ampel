@@ -1,6 +1,6 @@
 def simpleFilter(series, tags):
     '''A very simple filter only looking for keywords in the genre string'''
-    return any([tag in series.genre.split() for tag in tags])
+    return any([tag in series.genre for tag in tags])
 
 def simpleSearchFilter(series, string):
     '''A very simple search-selector'''

@@ -25,3 +25,21 @@ def search(inputString):
     if not seriesList:
         raise AssertionError("No database availiable (search)")
     return filter(lambda e: simpleSelection.simpleSearchFilter(e, inputString), seriesList)
+
+def getFilters(limit=20):
+    if not seriesList:
+        raise AssertionError("No database availiable (filters)")
+
+    filters = dict()
+    for e in seriesList:
+        for tag in e.genre:
+            if tag in filters:
+                filters[tag] += 1
+            else:
+                filters.update( { tag : 1 })
+    
+    filtersSortedByFrequency = sorted(list(zip(filters.keys(), filters.values())), key=lambda x: x[1])
+    return sorted([ x[0] for x in filtersSortedByFrequency][:limit])
+        
+        
+

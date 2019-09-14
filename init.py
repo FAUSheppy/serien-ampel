@@ -12,7 +12,8 @@ def rootPage():
     header  = flask.Markup(flask.render_template("partials/header.html"))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html"))
 
-    options = ["Action", "SiFi", "Anime", "Crime"]
+    options = backend.getFilters()
+    #["Action", "SiFi", "Anime", "Crime"]
     filters = []
     for opt in options:
         filters += [flask.Markup(flask.render_template("partials/suggest-filter-option.html", \

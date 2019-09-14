@@ -1,8 +1,9 @@
 import flask
+import re
 
 class Series:
     def __init__(self, genre, score, season, title, complete):
-        self.genre    = genre
+        self.genre    = list(filter(lambda s: s.strip() != "", genre.split(",")))
         self.score    = score
         self.season   = season
         self.title    = title
