@@ -11,6 +11,7 @@ def lineToDict(lineArrFiltered):
         complete = True
         lineArrFiltered.remove("(complete)")
 
+    print(lineArrFiltered)
     title  = lineArrFiltered[0]
     season = lineArrFiltered[1]
     score  = lineArrFiltered[2]
