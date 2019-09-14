@@ -30,7 +30,7 @@ def suggestResults():
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                                                 seriesTitle="Title", \
                                                                                 rank="#", \
-                                                                                seriesScore="Rating"))
+                                                                                netflix="Netfix"))
     tagListString = flask.request.args.get("query")
     if not tagListString:
         raise AssertionError()

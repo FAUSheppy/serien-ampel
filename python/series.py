@@ -10,9 +10,8 @@ class Series:
         self.complete = complete
 
     def getLineHTML(self, rank):
-        string = flask.render_template("partials/seriesResultEntry.html", rank=rank, \
-                                                                 seriesTitle=self.title, \
-                                                                 seriesScore=self.score)
+        string = flask.render_template("partials/seriesResultEntry.html", rank=rank, seriesTitle=self.title, \
+                                            netflix="N/A")
         return flask.Markup(string)
 
     def getDetailsHTML(self, rank):

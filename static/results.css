@@ -9,7 +9,7 @@
     width: 25%;
 }
 
-.seriesScore{
+.netflix{
     float: right;
     width: 15%;
     text-align: right;
@@ -126,7 +126,7 @@
         margin-right: 20px;
     }
 
-    .seriesScore{
+    .netflix{
         /* 19% is just enought to cut the last letter */
         width: 19%;
     }
