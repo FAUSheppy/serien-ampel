@@ -18,6 +18,11 @@
     margin-top: 20px;
 }
 
+.small-button{
+    width:      40% !important;
+    margin-left: 5% !important;
+}
+
 .go-button{
     height: 50px;
     font-size: 30px;
