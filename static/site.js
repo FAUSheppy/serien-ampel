@@ -1,5 +1,12 @@
 function searchButton(){
-    
+    string = document.getElementById("search-field").value
+    if(string == ""){
+        alert("Must input some text")
+        return
+    }
+
+    window.location.href = '/search-results' + "?query=" + string
+
 }
 
 function suggestButton(){
