@@ -26,7 +26,7 @@ def search(inputString):
         raise AssertionError("No database availiable (search)")
     return filter(lambda e: simpleSelection.simpleSearchFilter(e, inputString), seriesList)
 
-def getFilters(limit=20):
+def getFilters(limit=100):
     if not seriesList:
         raise AssertionError("No database availiable (filters)")
 
