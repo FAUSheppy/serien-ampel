@@ -45,6 +45,7 @@
 
 .suggest-option{
     width: 30%;
+    max-width: 300px;
     margin-right: 3%;
     overflow: hidden;
     font-size: 30px;
