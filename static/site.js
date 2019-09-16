@@ -26,7 +26,6 @@ function suggestButton(){
     }
 
     window.location.href = '/suggest-results' + "?query=" + string
-    console.log("done")
 }
 
 function unfoldElement(elementID){
