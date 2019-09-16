@@ -1,7 +1,8 @@
 .search{
     padding: 20px;
     font-size: 15px;
-    background-color: orange;
+    background-color: darkcyan;
+    border-radius: 20px;
 }
 
 .search-field{
@@ -11,11 +12,12 @@
 }
 
 .suggest{
-    background-color: red;
+    background-color: orange;
     padding: 20px;
     overflow: auto;
     margin-bottom: 60px;
     margin-top: 20px;
+    border-radius: 20px;
 }
 
 .small-button{
@@ -28,7 +30,8 @@
     font-size: 30px;
     font-weight: bold;
     width:  100%;
-    background-color: green;
+    background-color: #FF6B6B;
+    color: #583535;
     margin-top: 20px;
     margin-bottom: 20px;
 }
