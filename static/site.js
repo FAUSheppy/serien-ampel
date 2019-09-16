@@ -1,5 +1,5 @@
 function searchButton(){
-
+    
 }
 
 function suggestButton(){
@@ -20,4 +20,12 @@ function suggestButton(){
 
     window.location.href = '/suggest-results' + "?query=" + string
     console.log("done")
+}
+
+function unfoldElement(elementID){
+    targetFold = document.getElementById("fold-" + elementID)
+    if(targetFold.style.display == "none")
+        targetFold.style.display = "block"
+    else
+         targetFold.style.display = "none"
 }

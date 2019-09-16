@@ -10,11 +10,11 @@
             {% for series in seriesList %}
                 {% set count = loop.index %}
                 {% if count % 2 == 0 %}
-                <div class="line-even">
+                <div id={{ count }} class="line-even" onclick="unfoldElement(this.id)">
                     {{ series.getLineHTML(count) }}
                 </div>
                 {% else %}
-                <div class="line-odd">
+                <div id={{ count }} class="line-odd" onclick="unfoldElement(this.id)">
                     {{ series.getLineHTML(count) }}
                 </div>
                 {% endif %}

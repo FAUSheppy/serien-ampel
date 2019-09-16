@@ -9,17 +9,19 @@
     width: 25%;
 }
 
-.netflix{
-    float: right;
+.onNetflix{
+    float: left;
     width: 15%;
-    text-align: right;
+    text-align: left;
 }
 
-.dropdownButton{
+.detailsDropdown{
     float: right;
     text-align: right;
     margin-right: 1%;
     width: 20%;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 /* #################### LEADERBOARDS ##################### */
@@ -28,9 +30,9 @@
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    min-width: 250px;
-    width: 80%;
-    max-width: 800px;
+    font-size: 200%;
+    min-width: 900px;
+    max-width: 1200px;
 }
 
 .colum-names{
@@ -38,7 +40,6 @@
     font-weight: bold;
     background-color: #00B800;
     overflow: hidden;
-    font-weight: bold;
 }
 
 .line-even{
@@ -126,7 +127,7 @@
         margin-right: 20px;
     }
 
-    .netflix{
+    .onNetflix{
         /* 19% is just enought to cut the last letter */
         width: 19%;
     }
