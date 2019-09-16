@@ -33,5 +33,5 @@ function unfoldElement(elementID){
     if(targetFold.style.display == "none")
         targetFold.style.display = "block"
     else
-         targetFold.style.display = "none"
+        targetFold.style.display = "none"
 }
