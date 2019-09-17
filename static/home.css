@@ -52,3 +52,9 @@
     float: left;
     display: inline-block;
 }
+
+@media(max-width: 800px){
+    .suggest-option{
+        width: unset;
+    }
+}
