@@ -65,11 +65,15 @@
 }
 
 .traffic-light{
-    margin: 4%;
+    margin-top:  40px;
+    margin-left: 30px;
     height: 190px;
     width:   90px;
     float: left;
-    background-color: darkgrey;
+    background-color: #333;
+    border-color: #4f4442;
+    border-width: thick;
+    border-style: solid;
     border-radius: 10%;
 }
 
@@ -93,6 +97,16 @@
 
 .red{
     background: red;
+}
+
+.reasoning{
+    background-color: yellow;
+    height: 60%;
+    width:  70%;
+    float: left;
+    margin-left: 50px;
+    margin-top:  30px;
+    padding: 20px;
 }
 
 @media(max-width: 800px){
