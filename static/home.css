@@ -56,5 +56,10 @@
 @media(max-width: 800px){
     .suggest-option{
         width: unset;
+        min-width: 200px;
+    }
+
+    .go-button{
+        font-size: 7vw;
     }
 }
