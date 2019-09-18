@@ -36,14 +36,16 @@
 }
 
 .colum-names{
-    width: 100%;
+    width: 98%;
+    padding-left: 1%;
     font-weight: bold;
     background-color: #00B800;
     overflow: hidden;
 }
 
 .line-even{
-    width: 100%;
+    width: 98%;
+    padding-left: 1%;
     background-color: #999999; /* 60% grey */
     overflow: hidden;
     padding-top: 2px;
@@ -51,7 +53,8 @@
 }
 
 .line-odd{
-    width: 100%;    
+    width: 98%;
+    padding-left: 1%;
     background-color: lightgrey;
     overflow: hidden;
     padding-top: 2px;
@@ -60,6 +63,7 @@
 
 .seriesDetailsContainer{
     height: 300px;
+    width: 99%;
     background: darkcyan;
     display: none;
 }
@@ -140,11 +144,6 @@
         width: 30%;
         /* write over games */
         z-index: 2;
-    }
-
-    .seriesTitle:hover{
-        overflow: visible;
-        white-space: normal;
     }
 
     .dropdownButton{
