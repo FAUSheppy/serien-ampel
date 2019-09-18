@@ -113,6 +113,20 @@
     .results-container{
         font-size: 4.5vw;
         width: 100%;
+        min-width: 300px;
+    }
+
+    .traffic-light{
+        margin-top: 5%;
+        margin-left: 5%;
+        height: 65%;
+        width:  15%;
+    }
+
+    .reasoning{
+        margin-left: 5%;
+        margin-top:  5%;
+        width: 60%;
     }
     
     .colum-names{
