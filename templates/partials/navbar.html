@@ -1,4 +1,9 @@
 <div class="navbar">
-    <a class="navbar-left" href="/">Home</a>
-    <div class="navbar-right" style="text-decoration: line-through; text-decoration-color: red;">Login</div>
+    <a class="navbar-left"  href="/">Home</a>
+    {% if user.is_authenticated %}
+        <a class="navbar-right" href="/logout">Logout</a>
+        <div class="navbar-right username"> {{ user.get_id() }} </div>
+    {% else %} 
+        <a class="navbar-right" href="/login">Login</a>
+    {% endif %}
 </div>
