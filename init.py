@@ -3,6 +3,7 @@ import flask
 import flask_login as fl
 import python.backend as backend
 import python.user as user
+import argparse
 
 app = flask.Flask("serien-ampel")
 app.secret_key             = 'super secret key'
@@ -102,6 +103,17 @@ def logout():
     return flask.redirect("/")
 
 if __name__ == "__main__":
+
+    parser  = argparse.ArgumentParser(description="serienampel server", \
+                                        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument("-i", "--interface",  default="0.0.0.0", help="Interface to listen on")
+    parser.add_argument("-p", "--port",       default="5000",    help="Port to listen on")
+    parser.add_argument("-s", "--servername",                    help="External hostname (i.e. serienampel.de)")
+    args = parser.parse_args()
+
     backend.loadDB()
     loginManager.init_app(app)
-    app.run(host='0.0.0.0')
+    if args.servername:
+        app.config['SERVER_NAME']  = args.servername
+    app.run(host=args.interface, port=args.port)
