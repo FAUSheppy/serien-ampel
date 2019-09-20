@@ -2,6 +2,7 @@
 import flask
 import flask_login as fl
 import python.backend as backend
+import python.user as user
 
 app = flask.Flask("serien-ampel")
 app.secret_key             = 'super secret key'
@@ -76,19 +77,9 @@ def icon():
 
 
 ##### USER SESSION MANAGEMENT #####
-class User(fl.UserMixin):
-
-    def __init__(self, id):
-        self.id = id
-        self.name = "user" + str(id)
-        self.password = self.name + "_secret"
-        
-    def __repr__(self):
-        return "%d/%s/%s" % (self.id, self.name, self.password)
-
 @loginManager.user_loader
 def load_user(userId):
-    return User(hash(userId))
+    return user.User(hash(userId))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -96,8 +87,8 @@ def login():
         username = flask.request.form['username']
         password = flask.request.form['password']        
         if password == username:
-            user = User(username)
-            fl.login_user(user)
+            newUser = user.User(username)
+            fl.login_user(newUser)
             return flask.redirect("/")
         else:
             return flask.abort(401)
