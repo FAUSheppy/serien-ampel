@@ -3,6 +3,8 @@
     {% if user.is_authenticated %}
         <a class="navbar-right" href="/logout">Logout</a>
         <div class="navbar-right username"> {{ user.get_id() }} </div>
+    {% elif "/login" in request.path %}
+        <!-- placeholder -->
     {% else %} 
         <a class="navbar-right" href="/login">Login</a>
     {% endif %}

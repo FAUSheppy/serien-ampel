@@ -1,0 +1,39 @@
+.login-container{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkcyan;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+}
+
+input{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.login-button{
+    padding-left:  20px;
+    padding-right: 20px;
+    background-color: #FF6B6B;
+}
+
+@media(max-width: 500px){
+    .login-container{
+        margin-top: 50px;
+        padding: 4vw; 
+    }
+    input{
+        font-size: 7vw;
+        margin-top: 2vw;
+        margin-right: 1vw;
+        max-width: 95%;
+    }
+
+    .button{
+        font-size: 7vw;
+        margin-top: 5vw;
+    }
+}

@@ -84,6 +84,9 @@ def load_user(userId):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    footer = flask.Markup(flask.render_template("partials/footer.html"))
+    header = flask.Markup(flask.render_template("partials/header.html"))
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     if flask.request.method == 'POST':
         username = flask.request.form['username']
         password = flask.request.form['password']        
@@ -94,7 +97,7 @@ def login():
         else:
             return flask.abort(401)
     else:
-        return flask.render_template('login.html')
+        return flask.render_template('login.html', navbar=navbar, footer=footer, header=header)
 
 @app.route("/logout")
 @fl.login_required
