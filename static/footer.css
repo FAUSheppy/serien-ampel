@@ -19,10 +19,6 @@
     color: black;
 }
 
-.mid-footer{
-
-}
-
 .left-footer{
     float: left;
 }
@@ -59,5 +55,9 @@
     .mid{
         margin-left: 2.5%;
         margin-right: 2.5%;
+    }
+    
+    .mid-footer{
+        display: none;
     }
 }
