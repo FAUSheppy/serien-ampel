@@ -90,7 +90,7 @@ def login():
         if password == username:
             newUser = user.User(username)
             fl.login_user(newUser)
-            return flask.redirect("/")
+            return flask.redirect(app.config["REDIRECT_BASE"])
         else:
             return flask.abort(401)
     else:
@@ -100,7 +100,7 @@ def login():
 @fl.login_required
 def logout():
     fl.logout_user()
-    return flask.redirect("/")
+    return flask.redirect(app.config["REDIRECT_BASE"])
 
 if __name__ == "__main__":
 
@@ -115,5 +115,7 @@ if __name__ == "__main__":
     backend.loadDB()
     loginManager.init_app(app)
     if args.servername:
-        app.config['SERVER_NAME']  = args.servername
+        app.config['HOST']           = args.servername
+        app.config['REDIRECT_BASE']  = args.servername + "/"
+
     app.run(host=args.interface, port=args.port)
