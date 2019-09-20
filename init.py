@@ -117,5 +117,7 @@ if __name__ == "__main__":
     if args.servername:
         app.config['HOST']           = args.servername
         app.config['REDIRECT_BASE']  = args.servername + "/"
+    else:
+        app.config['REDIRECT_BASE']  = "/"
 
     app.run(host=args.interface, port=args.port)
