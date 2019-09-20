@@ -34,7 +34,7 @@ def suggestResults():
     '''This path displays results for a suggest with parameters'''
     footer  = flask.Markup(flask.render_template("partials/footer.html"))
     header  = flask.Markup(flask.render_template("partials/header.html"))
-    navbar  = flask.Markup(flask.render_template("partials/navbar.html"), user=fl.current_user)
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                                                 seriesTitle="Title", \
                                                                                 rank="#", \
@@ -56,7 +56,7 @@ def searchResults():
     '''This path displays results for a series-search'''
     footer = flask.Markup(flask.render_template("partials/footer.html"))
     header = flask.Markup(flask.render_template("partials/header.html"))
-    navbar  = flask.Markup(flask.render_template("partials/navbar.html"), user=fl.current_user)
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                                                 seriesTitle="Title", \
                                                                                 rank="#", \
