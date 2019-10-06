@@ -59,6 +59,7 @@ def searchResults():
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                                                 seriesTitle="Title", \
+                                                                                netflix="Netflix",\
                                                                                 rank="#", \
                                                                                 seriesScore="Rating"))
     inputString = flask.request.args.get("query")
