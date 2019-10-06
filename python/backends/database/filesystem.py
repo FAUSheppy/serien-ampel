@@ -8,7 +8,10 @@ def loadDbDirectory(dirname):
     series = []
     for sub in os.listdir(dirname):
         fullpath = os.path.join(dirname, sub)
-        if not os.path.isdir(fullpath):
+
+        if sub == ".git":
+            continue
+        elif not os.path.isdir(fullpath):
             continue
         else:
             series += [ loadSeriesDirectory(fullpath) ]
@@ -17,7 +20,7 @@ def loadDbDirectory(dirname):
 
 def loadSeriesDirectory(dirname):
     '''Load a single single directory containing an info.json as described in the README'''
-    
+
     infoFile   = os.path.join(dirname, "info.json")
     with open(infoFile) as f:
         data = json.load(f)
