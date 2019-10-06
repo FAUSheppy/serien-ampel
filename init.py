@@ -36,10 +36,10 @@ def suggestResults():
     header  = flask.Markup(flask.render_template("partials/header.html"))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
-                                                                                seriesTitle="Title", \
-                                                                                rank="#", \
-                                                                                netflix="Netfix", \
-                                                                                details="Details"))
+                                                             seriesTitle="Title", \
+                                                             rank="#", \
+                                                             netflix="Netfix", \
+                                                             details="Details"))
     tagListString = flask.request.args.get("query")
     if not tagListString:
         raise AssertionError()
@@ -58,10 +58,10 @@ def searchResults():
     header = flask.Markup(flask.render_template("partials/header.html"))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
-                                                                                seriesTitle="Title", \
-                                                                                netflix="Netflix",\
-                                                                                rank="#", \
-                                                                                seriesScore="Rating"))
+                                                             seriesTitle="Title", \
+                                                             netflix="Netflix",\
+                                                             rank="#", \
+                                                             seriesScore="Rating"))
     inputString = flask.request.args.get("query")
     if not inputString:
         raise AssertionError()
