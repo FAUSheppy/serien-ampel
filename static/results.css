@@ -103,7 +103,7 @@
     background: red;
 }
 
-.reasoning{
+.description{
     background-color: yellow;
     height: 60%;
     width:  70%;
@@ -127,7 +127,7 @@
         width:  15%;
     }
 
-    .reasoning{
+    .description{
         margin-left: 5%;
         margin-top:  5%;
         width: 60%;

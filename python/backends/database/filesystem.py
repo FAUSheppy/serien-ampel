@@ -21,4 +21,4 @@ def loadSeriesDirectory(dirname):
     infoFile   = os.path.join(dirname, "info.json")
     with open(infoFile) as f:
         data = json.load(f)
-        return series.Series(data["genre"], data["score"], data["season"], data["title"], data["complete"])
+        return series.Series(data)
