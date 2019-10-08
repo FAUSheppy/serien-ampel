@@ -19,7 +19,7 @@ def suggest(tags, user=None):
     if not seriesList:
         raise AssertionError("No database availiable (suggest)")
 
-    return filter(lambda e: simpleSelection.simpleFilter(e, tags), seriesList)
+    return simpleSelection.greedyTagScored(seriesList, tags)
 
 def search(inputString):
     if not seriesList:
