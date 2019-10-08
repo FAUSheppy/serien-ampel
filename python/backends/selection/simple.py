@@ -4,14 +4,15 @@ def greedyTagScored(seriesList, tags):
     for series in seriesList:
         if any([tag in series.genre for tag in tags]):
             if series in retDict:
-                retDict[series] += series.score
+                retDict[series] *= 2
             else:
                 retDict.update({series:series.score})
 
     # normalize for many-tag series #
-    # norm = max(3, len(series.genre))
-    # for series in retDict.keys():
-    #     retDict[series] /= norm
+    for series in retDict.keys():
+        seriesTagsNotInQuery = len(list(filter(lambda x: x not in tags, series.genre)))
+        queryTagsNotInSeries = len(list(filter(lambda x: x not in series.genre, tags)))
+        retDict[series] /= max(1, max(queryTagsNotInSeries, seriesTagsNotInQuery))
 
     tupelList       = list(zip(retDict.keys(), retDict.values()))
     sortedTupelList = sorted(tupelList, key=lambda x: x[1], reverse=True)
