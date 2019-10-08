@@ -10,12 +10,13 @@ app.secret_key             = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 loginManager               = fl.LoginManager()
 SEPERATOR = ","
+TITLE = "Serienampel"
 
 ##### FRONTEND PATHS ########
 @app.route('/')
 def rootPage():
     footer  = flask.Markup(flask.render_template("partials/footer.html"))
-    header  = flask.Markup(flask.render_template("partials/header.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html", websiteTitle=TITLE))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     
     print(fl.current_user)
@@ -33,7 +34,7 @@ def rootPage():
 def suggestResults():
     '''This path displays results for a suggest with parameters'''
     footer  = flask.Markup(flask.render_template("partials/footer.html"))
-    header  = flask.Markup(flask.render_template("partials/header.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html", websiteTitle=TITLE))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                              seriesTitle="Title", \
@@ -55,7 +56,7 @@ def suggestResults():
 def searchResults():
     '''This path displays results for a series-search'''
     footer = flask.Markup(flask.render_template("partials/footer.html"))
-    header = flask.Markup(flask.render_template("partials/header.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html", websiteTitle=TITLE))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                              seriesTitle="Title", \
@@ -86,7 +87,7 @@ def load_user(userId):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     footer = flask.Markup(flask.render_template("partials/footer.html"))
-    header = flask.Markup(flask.render_template("partials/header.html"))
+    header  = flask.Markup(flask.render_template("partials/header.html", websiteTitle=TITLE))
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     if flask.request.method == 'POST':
         username = flask.request.form['username']
