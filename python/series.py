@@ -19,7 +19,7 @@ class Series:
         if 'description' in data:
             self.description = data['description']
         else:
-            self.description = ["Not Information (yet)"]
+            self.description = "No Information (yet)"
 
 
     def getLineHTML(self, rank):
