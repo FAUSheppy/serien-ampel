@@ -1,14 +1,13 @@
 .search{
-    padding: 20px;
-    font-size: 15px;
-    background-color: darkcyan;
-    border-radius: 20px;
+    font-size: 10px;
+    background-image: linear-gradient(white,#ebbbca);
 }
 
 .search-field{
-    width: 50%;
+    margin-left: 1%;
+    margin-right: 2%;
+    width: 55%;
     font-size: 30px;
-    margin: auto;
 }
 
 .suggest{
@@ -17,12 +16,11 @@
     overflow: auto;
     margin-bottom: 60px;
     margin-top: 20px;
-    border-radius: 20px;
+    background-image: linear-gradient(white,#fa739d,#d17d97);
 }
 
 .small-button{
     width:      40% !important;
-    margin-left: 5% !important;
 }
 
 .go-button{
@@ -32,8 +30,13 @@
     width:  100%;
     background-color: #FF6B6B;
     color: #583535;
+    border-color: black;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.go-button:hover{
+    background-color: #c75454;
 }
 
 .suggest-filter{

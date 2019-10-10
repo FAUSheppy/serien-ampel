@@ -1,31 +1,28 @@
 .navbar{
     text-align: center;
-    font-weight: bold;
     font-size: 30px;
-    position: fixed;
-    width: 96%;
-    padding-left: 2%;
-    padding-right: 2%;
-    background-color: grey;
-    top: 0;
-    left: 0;
+    width: 100%;
+    background-color: #39464e;
     height: 35px;
 }
 
 .navbar-left{
     float: left;
     text-decoration: none;
-    color: black;
+    color: white;
+    margin-left: 2%;
 }
 
 .navbar-right{
     float: right;
     text-decoration: none;
-    color: black;
+    color: white;
+    margin-right: 2%;
 }
 
 .username{
     float: right;
     margin-right: 2%;
     font-style: italic;
+    color: white;
 }
