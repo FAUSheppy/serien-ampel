@@ -39,7 +39,7 @@ def suggestResults():
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                              seriesTitle="Title", \
                                                              rank="#", \
-                                                             netflix="Netfix", \
+                                                             netflix="Netflix", \
                                                              details="Details"))
     tagListString = flask.request.args.get("query")
     if not tagListString:
