@@ -6,7 +6,7 @@
 
 .seriesTitle{
     float: left;
-    width: 25%;
+    width: 40%;
 }
 
 .onNetflix{
@@ -146,7 +146,6 @@
     .seriesTitle{
         overflow: hidden;
         white-space: nowrap;
-        width: 30%;
         /* write over games */
         z-index: 2;
     }
