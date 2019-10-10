@@ -18,7 +18,10 @@ def suggest(tags, user=None):
         raise NotImplementedError()
     if not seriesList:
         raise AssertionError("No database availiable (suggest)")
-
+   
+    # filter empty string
+    tags = list(filter(lambda x: x != '', tags))
+    
     return simpleSelection.greedyTagScored(seriesList, tags)
 
 def search(inputString):
