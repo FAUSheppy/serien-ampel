@@ -1,6 +1,7 @@
 import os
 import json
 import python.series as series
+import sys
 
 def loadDbDirectory(dirname):
     '''Load a full multiple series directory structure as described in the README'''
@@ -25,6 +26,7 @@ def loadSeriesDirectory(dirname):
     with open(infoFile) as f:
         try:
             data = json.load(f)
+            return series.Series(data)
         except json.decoder.JSONDecodeError as e:
             print("Failed to decode {} - {}".format(infoFile, e))
-        return series.Series(data)
+            sys.exit(1)
