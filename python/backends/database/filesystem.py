@@ -23,5 +23,8 @@ def loadSeriesDirectory(dirname):
 
     infoFile   = os.path.join(dirname, "info.json")
     with open(infoFile) as f:
-        data = json.load(f)
+        try:
+            data = json.load(f)
+        except json.decoder.JSONDecodeError as e:
+            print("Failed to decode {} - {}".format(infoFile, e))
         return series.Series(data)
