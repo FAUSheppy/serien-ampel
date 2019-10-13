@@ -67,6 +67,13 @@
     padding-bottom: 2px;
 }
 
+.line-even:hover{
+    opacity: 0.75;
+}
+.line-odd:hover{
+    opacity: 0.75;
+}
+
 .seriesDetailsContainer{
     height: 300px;
     width: 99%;
