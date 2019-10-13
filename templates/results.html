@@ -11,11 +11,11 @@
             {% for series in seriesList %}
                 {% set count = loop.index %}
                 {% if count % 2 == 0 %}
-                <div id={{ count }} class="line-even" onclick="unfoldElement(this.id)">
+                <div id={{ count }} class="line-even" onclick="unfoldElement(this.id)" {{ series.getBackgroundColor() }}>
                     {{ series.getLineHTML(count) }}
                 </div>
                 {% else %}
-                <div id={{ count }} class="line-odd" onclick="unfoldElement(this.id)">
+                <div id={{ count }} class="line-odd" onclick="unfoldElement(this.id)" {{ series.getBackgroundColor() }}>
                     {{ series.getLineHTML(count) }}
                 </div>
                 {% endif %}
