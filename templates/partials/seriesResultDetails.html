@@ -1,4 +1,4 @@
-<div id="fold-{{ rank }}" class=seriesDetailsContainer {% if rank == 1 %} style="display: block;" {% endif %}>
+<div id="fold-{{ rank }}" class=seriesDetailsContainer {% if rank == 1 %} style="display: block;" {% else %} style="display: none" {% endif %}>
     <div class=traffic-light>
         <div class="green light"  {% if score >= 6 %}               style="opacity: 1" {% endif %}> </div>
         <div class="yellow light" {% if score <= 6 and score >= 3%} style="opacity: 1" {% endif %}> </div>
