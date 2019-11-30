@@ -114,10 +114,12 @@ if __name__ == "__main__":
 
     parser.add_argument("-i", "--interface",  default="0.0.0.0", help="Interface to listen on")
     parser.add_argument("-p", "--port",       default="5000",    help="Port to listen on")
-    parser.add_argument("-s", "--servername",                    help="External hostname (i.e. serienampel.de)")
+    parser.add_argument("-s", "--servername",       help="External hostname (i.e. serienampel.de)")
+    parser.add_argument("-e", "--enforce-complete", action="store_const", default=False, const=True,
+                                                    help="Fail on any Information missing")
     args = parser.parse_args()
 
-    backend.loadDB()
+    backend.loadDB(args.enforce_complete)
     loginManager.init_app(app)
     if args.servername:
         app.config['HOST']           = args.servername

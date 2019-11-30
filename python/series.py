@@ -1,13 +1,28 @@
 import flask
+import sys
 import re
 
+EXPECTED_KEYS = ["title", "score", "title", "netflix", "description"]
+
 class Series:
-    def __init__(self, data):
+    def __init__(self, data, enforceComplete=False):
+
+        # check input #
+        if not "title" in data:
+            raise ValueError("Series must have a title, input dict was {}".format(data))
+
+        missing = list(filter(lambda x: x not in data, EXPECTED_KEYS))
+        if missing:
+            msg = "Missing Information {} for {}".format(missing, data["title"])
+            if enforceComplete:
+                raise ValueError(msg)
+            else:
+                print(msg, file=sys.stderr)
+
         self.genre    = list(filter(lambda s: s.strip() != "", data["genre"].split(",")))
         self.score    = data["score"]
         self.season   = data["season"]
         self.title    = data["title"]
-        self.complete = data["complete"]
         self.complete = data["complete"]
 
         if 'netflix' not in data:

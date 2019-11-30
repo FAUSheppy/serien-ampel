@@ -7,11 +7,11 @@ seriesList = None
 BACKEND_FS = "FS"
 BACKEND_FS_DEFAULT = "db"
 
-def loadDB(backend=BACKEND_FS):
+def loadDB(enforce, backend=BACKEND_FS):
     global seriesList
 
     if backend == BACKEND_FS:
-        seriesList = fs.loadDbDirectory(BACKEND_FS_DEFAULT)
+        seriesList = fs.loadDbDirectory(enforce, BACKEND_FS_DEFAULT)
 
 def suggest(tags, user=None):
     if user:
