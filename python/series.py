@@ -8,6 +8,7 @@ class Series:
         self.season   = data["season"]
         self.title    = data["title"]
         self.complete = data["complete"]
+        self.complete = data["complete"]
 
         if 'netflix' not in data:
             self.netflix = "N/A"
@@ -15,6 +16,11 @@ class Series:
             self.netflix = "Yes"
         else:
             self.netflix = "No"
+
+        if 'warning' in data:
+            self.warning = "Warning: {}".format(data['warning'])
+        else:
+            self.warning = None
 
         if 'description' in data:
             self.description = data['description']
@@ -42,7 +48,7 @@ class Series:
 
     def getDetailsHTML(self, rank):
         string = flask.render_template("partials/seriesResultDetails.html", score=self.score, \
-                                            description=self.description, rank=rank)
+                                            description=self.description, warning=self.warning, rank=rank)
         return flask.Markup(string)
 
     def __gt__(self, other):

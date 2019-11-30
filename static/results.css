@@ -117,12 +117,23 @@
 }
 
 .description{
-    height: 60%;
+    height: 40%;
     width:  70%;
     float: left;
     margin-left: 50px;
     margin-top:  10px;
     padding: 20px;
+    font-size: 25px;
+}
+
+.warning{
+    background-color: yellow;
+    width:  70%;
+    font-style: italic;
+    float: left;
+    margin-left: 50px;
+    margin-top:  10px;
+    padding: 5px;
     font-size: 25px;
 }
 
@@ -143,6 +154,11 @@
     .description{
         margin-left: 5%;
         width: 60%;
+        font-size: 4.5vw;
+    }
+
+    .warning{
+        margin-left: 5%;
         font-size: 4.5vw;
     }
     
