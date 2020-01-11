@@ -57,7 +57,7 @@ def searchResults():
     '''This path displays results for a series-search'''
     footer = flask.Markup(flask.render_template("partials/footer.html"))
     header  = flask.Markup(flask.render_template("partials/header.html", websiteTitle=TITLE))
-    navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
+    navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user.__repr__()))
     columNames = flask.Markup(flask.render_template("partials/seriesResultEntry.html", \
                                                              seriesTitle="Title", \
                                                              netflix="Netflix",\
@@ -81,8 +81,8 @@ def icon():
 
 ##### USER SESSION MANAGEMENT #####
 @loginManager.user_loader
-def load_user(userId):
-    return user.User(hash(userId))
+def load_user(userName):
+    return user.getUserFromDB(userName)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -91,10 +91,9 @@ def login():
     navbar  = flask.Markup(flask.render_template("partials/navbar.html", user=fl.current_user))
     if flask.request.method == 'POST':
         username = flask.request.form['username']
-        password = flask.request.form['password']        
-        if password == username:
-            newUser = user.User(username)
-            fl.login_user(newUser)
+        password = flask.request.form['password']
+        if username in user.userDB and password == user.userDB[username].password:
+            fl.login_user(user.User(username))
             return flask.redirect(app.config["REDIRECT_BASE"])
         else:
             return flask.abort(401)
