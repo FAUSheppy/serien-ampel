@@ -7,8 +7,12 @@ import argparse
 
 app = flask.Flask("serien-ampel")
 app.secret_key             = 'super secret key'
-app.config['SESSION_TYPE'] = 'filesystem'
-loginManager               = fl.LoginManager()
+
+app.config['SESSION_TYPE']    = 'filesystem'
+app.config['REDIRECT_BASE']   = "/"
+app.config["ENFORCE_COMPLETE"] = False
+
+loginManager = fl.LoginManager()
 SEPERATOR = ","
 TITLE = "Serienampel"
 
@@ -106,6 +110,11 @@ def logout():
     fl.logout_user()
     return flask.redirect(app.config["REDIRECT_BASE"])
 
+@app.before_first_request
+def init():
+    backend.loadDB(app.config["ENFORCE_COMPLETE"])
+    loginManager.init_app(app)
+
 if __name__ == "__main__":
 
     parser  = argparse.ArgumentParser(description="serienampel server", \
@@ -117,13 +126,9 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--enforce-complete", action="store_const", default=False, const=True,
                                                     help="Fail on any Information missing")
     args = parser.parse_args()
-
-    backend.loadDB(args.enforce_complete)
-    loginManager.init_app(app)
     if args.servername:
-        app.config['HOST']           = args.servername
         app.config['REDIRECT_BASE']  = args.servername + "/"
-    else:
-        app.config['REDIRECT_BASE']  = "/"
+    
+    app.config["ENFORCE_COMPLETE"] = args.enforce_complete
 
     app.run(host=args.interface, port=args.port)
