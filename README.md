@@ -20,7 +20,7 @@ Well you have come to the right place, because this project is gonna protect you
                             None)
 
 ## WSGI (waitress)
-Configuration can be done via *config.py*, port and interface must be specified in the command line or appropritate WSGI-runner configuration:
+Configuration can be done via *config.py*, port and interface must be specified in the command line or appropriate WSGI-runner configuration:
 
     apt install python3-waitress
     waitress-serve --host 127.0.0.1 --port 5000 --call 'app:createApp'
