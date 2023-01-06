@@ -19,7 +19,12 @@ class Series:
             else:
                 print(msg, file=sys.stderr)
 
-        self.genre    = list(filter(lambda s: s.strip() != "", data["genre"].split(",")))
+        self.genre    = data["genre"]
+        if type(self.genre) == str:
+            if "," in self.genre:
+                self.genre = self.genre.split(",")
+            else:
+                self.genre = [self.genre]
         self.score    = data["score"]
         self.season   = data["season"]
         self.title    = data["title"]

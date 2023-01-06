@@ -30,3 +30,11 @@ def loadSeriesDirectory(enforce, dirname):
         except json.decoder.JSONDecodeError as e:
             print("Failed to decode {} - {}".format(infoFile, e))
             sys.exit(1)
+
+def loadUserDirectory(dirname):
+    ''''Load a single directory containing all ratings of a given user'''
+
+    for sub in os.listdir(dirname):
+        fullpath = os.path.join(dirname, sub)
+        filename = os.path.join(fullpath, "info.json")
+

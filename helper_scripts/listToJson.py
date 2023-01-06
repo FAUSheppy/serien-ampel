@@ -10,12 +10,22 @@ def lineToDict(lineArrFiltered):
     if "(complete)" in lineArrFiltered:
         complete = True
         lineArrFiltered.remove("(complete)")
-
+    
     print(lineArrFiltered)
     title  = lineArrFiltered[0]
-    season = lineArrFiltered[1]
-    score  = lineArrFiltered[2]
+    score  = lineArrFiltered[1]
+    season = lineArrFiltered[2]
     genre  = lineArrFiltered[3]
+
+    if "," in genre:
+        genre = genre.split(",")
+    elif "/" in genre:
+        genre = genre.split("/")
+    else:
+        genre = [genre]
+
+    genre = list(map(lambda x: x.strip(), genre))
+
 
     ret.update( { "title"     : title        } )
     ret.update( { "season"    : season       } )
@@ -34,7 +44,6 @@ if __name__ == "__main__":
     linesSplit  = [ list(filter(lambda x: x, x.split("  "))) for x in lines ]
     linesFilter = filter(lambda x: len(x) >= 4, linesSplit)
     linesFilter = [ list(map(lambda a: a.strip(), x)) for x in linesFilter ]
-    
     for arr in linesFilter:
         series    = lineToDict(arr)
         targetDir = "db/" + series["title"]
@@ -42,3 +51,4 @@ if __name__ == "__main__":
             os.mkdir(targetDir)
             with open(targetDir + "/" + "info.json", "w") as f:
                 f.write(json.dumps(series, indent=4, sort_keys=True))
+            print(json.dumps(series, indent=4, sort_keys=True))

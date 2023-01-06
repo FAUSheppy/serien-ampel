@@ -68,8 +68,6 @@ def searchResults():
                                                              rank="#", \
                                                              seriesScore="Rating"))
     inputString = flask.request.args.get("query")
-    if not inputString:
-        raise AssertionError()
     return flask.render_template("results.html", header=header, footer=footer, navbar=navbar,
                                     seriesList=backend.search(inputString), columNames=columNames)
 
