@@ -5,5 +5,4 @@
 *.pyc
 data/
 build/
-db/
 __pychache__/
