@@ -1,6 +1,7 @@
 import flask
 import sys
 import re
+import markupsafe
 
 EXPECTED_KEYS = ["title", "score", "title", "netflix", "description"]
 
@@ -51,7 +52,7 @@ class Series:
     def getLineHTML(self, rank, score=-1):
         string = flask.render_template("partials/seriesResultEntry.html", rank=rank, 
 											seriesTitle=self.title, netflix=self.netflix)
-        return flask.Markup(string)
+        return markupsafe.Markup(string)
 
     def getBackgroundColor(self):
         color = None
@@ -69,7 +70,7 @@ class Series:
     def getDetailsHTML(self, rank):
         string = flask.render_template("partials/seriesResultDetails.html", score=self.score, \
                                             description=self.description, warning=self.warning, rank=rank)
-        return flask.Markup(string)
+        return markupsafe.Markup(string)
 
     def __gt__(self, other):
         return self.score > other.score
