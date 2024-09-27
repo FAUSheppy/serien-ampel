@@ -24,6 +24,3 @@ Configuration can be done via *config.py*, port and interface must be specified 
 
     apt install python3-waitress
     waitress-serve --host 127.0.0.1 --port 5000 --call 'app:createApp'
-
-# Pictures
-![Main Page](https://media.atlantishq.de/serienampel.png)    
